@@ -1,0 +1,42 @@
+@import "../../mixins/mixin";
+.container {
+  //@include container;
+
+  .nav-components {
+    @include nav-component;
+
+    .nav-heading {
+      @include nav-heading;
+    }
+
+    .nav-ulleft {
+      margin: 0;
+      float: left;
+      .nav-items {
+        list-style-type: none;
+        float: left;
+        .nav-link {
+          @include nav-link;
+          &:hover {
+            @include hovers;
+          }
+        }
+      }
+    }
+    .nav-ulright {
+      margin: 0;
+      float: right;
+      .nav-items {
+        float: left;
+        list-style-type: none;
+        .nav-link {
+          @include nav-link;
+          &:hover {
+            @include hovers;
+          }
+        }
+      }
+    }
+  }
+}
+

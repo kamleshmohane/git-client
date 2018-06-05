@@ -1,0 +1,39 @@
+@mixin container{
+  margin: 0;
+  padding:0px 200px 0 200px ;
+}
+
+//Navbar
+@mixin nav-component{
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding: 0px;
+  position: relative;
+  background-color: white;
+}
+
+@mixin nav-heading{
+  margin: 0;
+  padding: 10px;
+  color: orangered;
+  float: left;
+  font: bold 20px 'Century Schoolbook L';
+}
+
+@mixin nav-link{
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+  padding: 14px;
+  outline-style: none;
+  font:  14px 'Abyssinica SIL';
+  color: black;
+}
+
+@mixin hovers{
+  background-color: orangered;
+  color: white;
+  font-weight: 100;
+}
