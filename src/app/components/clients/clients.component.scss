@@ -1,13 +1,19 @@
 @import "../../mixins/mixin";
 
-.container{
-    margin:0;
-    padding: 0 200px 0 200px;
-    .table-content {
-        padding: 20px;
-        .thead-inverse {
-            width: 100%;
-            padding: 20px 80px;
-        }
+.container {
+  margin: 0;
+  padding: 0 200px 0 200px;
+  .table-content {
+    padding: 20px;
+    .thead-inverse {
+      width: 100%;
+      padding: 20px 80px;
+      background-color: black;
+      color: white;
+      th {
+        width: 100%;
+        padding: 10px 20px;
+      }
     }
+  }
 }
