@@ -1,19 +1,50 @@
 @import "../../mixins/mixin";
 
 .container {
-  margin: 0;
+  margin-top: 40px;
+
   padding: 0 200px 0 200px;
   .table-content {
     padding: 20px;
+    border-collapse: collapse;
+    font: 12px 'FreeSans';
+    width: 100%;
+    .grey {
+      background-color: #e2e2e2;
+    }
+    .white {
+      background-color: white;
+    }
     .thead-inverse {
       width: 100%;
-      padding: 20px 80px;
       background-color: black;
       color: white;
       th {
-        width: 100%;
-        padding: 10px 20px;
+        padding: 5px 15px;
+        text-align: left;
       }
     }
+    tr {
+        td {
+          padding: 5px 15px;
+          button {
+            width: auto;
+            height: 20px;
+            &:hover{
+              background-color: black;
+              border: 2px solid black;
+            }
+            a {
+              text-decoration: none;
+              font: 12px 'FreeSans';
+              color: black;
+              &:hover {
+                color: white;
+              }
+            }
+          }
+        }
+    }
+
   }
 }

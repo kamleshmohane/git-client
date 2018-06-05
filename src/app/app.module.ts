@@ -23,6 +23,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 //service import
 import { ClientService } from './services/client.service';
+import {NgxSpinnerModule} from "ngx-spinner";
 
 const appRoutes : Routes = [
   {path:'' , component:DashboardComponent},
@@ -56,7 +57,8 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    NgxSpinnerModule
   ],
   providers: [
     AngularFireAuth,

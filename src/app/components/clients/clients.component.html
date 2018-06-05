@@ -1,6 +1,6 @@
+<br><br>
 <div class="container">
-    <table *ngIf="clients?.length > 0; else
-                                    noClients" class="table-content">
+    <table *ngIf="clients?.length" class="table-content">
         <thead class="thead-inverse">
         <th>ID</th>
         <th>Name</th>
@@ -10,8 +10,8 @@
         <th></th>
         </thead>
 
-        <tbody>
-        <tr *ngFor="let client of clients">
+        <tbody *ngFor="let client of clients; let i = index">
+        <tr [ngClass]="{'grey': (i%2) == 0 , 'white' : (i%2) != 0 }">
             <td>{{client.keyData.key}}</td>
             <td>{{client.firstName}} {{client.lastName}}</td>
             <td>{{client.email}}</td>
@@ -24,8 +24,9 @@
         </tbody>
     </table>
 
-    <ng-template #noClients>
+    <div *ngIf="!clients?.length">
         <hr>
         <h4>Sorry, there are no Clients</h4>
-    </ng-template>
+    </div>
 </div>
+<ngx-spinner></ngx-spinner>

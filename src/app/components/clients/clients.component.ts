@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ClientService} from '../../services/client.service';
 import {Client} from '../../models/Client';
 import {config} from "rxjs";
+import {NgxSpinnerService} from "ngx-spinner";
 @Component({
     selector: 'app-clients',
     templateUrl: './clients.component.html',
@@ -12,7 +13,8 @@ export class ClientsComponent implements OnInit, Client {
     clients: any;
     clients_1: any;
 
-    constructor(public clientService: ClientService) {
+    constructor(public clientService: ClientService, private spinner: NgxSpinnerService) {
+        this.spinner.show();
     }
 
     ngOnInit() {
@@ -24,6 +26,7 @@ export class ClientsComponent implements OnInit, Client {
         });
         this.clientService.getClients().snapshotChanges().subscribe(clients_1 => {
             this.clients_1 = clients_1;
+            this.spinner.hide();
         });
     }
 }
