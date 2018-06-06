@@ -1,9 +1,21 @@
-@import "../../mixins/mixin";
-
 .container {
   margin-top: 40px;
-
   padding: 0 200px 0 200px;
+  .user {
+    h2 {
+      margin: 10px;
+      width: auto;
+      float: left;
+    }
+  }
+  .total {
+    label {
+      margin: 15px 0;
+      width: auto;
+      float: right;
+      font: bold 16px 'Bitstream Charter';
+    }
+  }
   .table-content {
     padding: 20px;
     border-collapse: collapse;
@@ -32,7 +44,8 @@
             height: 20px;
             &:hover{
               background-color: black;
-              border: 2px solid black;
+              border: none;
+              color: white;
             }
             a {
               text-decoration: none;

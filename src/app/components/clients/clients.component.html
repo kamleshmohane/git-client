@@ -1,32 +1,40 @@
 <br><br>
 <div class="container">
-    <table *ngIf="clients?.length" class="table-content">
-        <thead class="thead-inverse">
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Balance</th>
-        <th></th>
-        </thead>
+  <div class="user">
+    <h2><i class="fa fa-users"></i>Clients</h2>
+  </div>
+  <div class="total">
+    <label>Total owed: {{totalOwed | currency:"USD":true}}</label>
+  </div>
+  <table *ngIf="clients?.length" class="table-content">
+    <thead class="thead-inverse">
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Balance</th>
+    <th></th>
+    </thead>
 
-        <tbody *ngFor="let client of clients; let i = index">
-        <tr [ngClass]="{'grey': (i%2) == 0 , 'white' : (i%2) != 0 }">
-            <td>{{client.keyData.key}}</td>
-            <td>{{client.firstName}} {{client.lastName}}</td>
-            <td>{{client.email}}</td>
-            <td>{{client.phone}}</td>
-            <td>{{client.balance}}</td>
-            <td>
-                <button><a href="">Details</a></button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <tbody *ngFor="let client of clients; let i = index">
+    <tr [ngClass]="{'grey': (i%2) == 0 , 'white' : (i%2) != 0 }">
+      <td>{{client?.keyData?.key}}</td>
+      <td>{{client?.firstName}} {{client.lastName}}</td>
+      <td>{{client?.email}}</td>
+      <td>{{client?.phone}}</td>
+      <td>{{client?.balance | currency:"USD":true}}</td>
+      <td>
+        <a [routerLink]="['/']">
+          <button><i class="fa fa-arrow-circle-o-right"></i>Details</button>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 
-    <div *ngIf="!clients?.length">
-        <hr>
-        <h4>Sorry, there are no Clients</h4>
-    </div>
+  <!--<div *ngIf="!clients?.length">-->
+  <!--<hr>-->
+  <!--<h4>Sorry, there are no Clients</h4>-->
+  <!--</div>-->
 </div>
 <ngx-spinner></ngx-spinner>
