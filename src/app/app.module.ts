@@ -37,6 +37,10 @@ const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'add-client',
+    component: AddClientComponent
   }
 ];
 

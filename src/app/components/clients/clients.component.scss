@@ -9,6 +9,7 @@
     }
   }
   .total {
+    width: 80%;
     label {
       margin: 15px 0;
       width: auto;
@@ -20,7 +21,7 @@
     padding: 20px;
     border-collapse: collapse;
     font: 12px 'FreeSans';
-    width: 100%;
+    width: 80%;
     .grey {
       background-color: #e2e2e2;
     }
@@ -40,7 +41,7 @@
         td {
           padding: 5px 15px;
           button {
-            width: auto;
+            width: 75px;
             height: 20px;
             &:hover{
               background-color: black;
