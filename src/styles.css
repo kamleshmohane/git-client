@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+/*!* You can add global styles to this file, and also import other style files *!*/
+.flash-alert p {
+    background-color: #f6aa9f;
+    opacity: 0.8;
+    position: relative;
+    top: -30px;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    z-index: 9999;
+    padding: 10px;
+    float: right;
+    border-radius: 4px;
+
+}
+
+.flash-success p {
+    background-color: #00d900;
+    opacity: 0.8;
+    position: relative;
+    top: -30px;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    z-index: 9999;
+    padding: 10px;
+    float: right;
+    border-radius: 4px;
+
+}

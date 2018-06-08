@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { FormsModule} from '@angular/forms';
 
 //Angular Firebase imports
 import {AngularFireModule} from 'angularfire2';
@@ -24,6 +25,7 @@ import {PageNotFoundComponent} from './components/page-not-found/page-not-found.
 //service import
 import {ClientService} from './services/client.service';
 import {NgxSpinnerModule} from "ngx-spinner";
+import {FlashMessagesModule} from "angular2-flash-messages/module";
 
 const appRoutes: Routes = [
   {
@@ -69,6 +71,8 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
     NgxSpinnerModule
