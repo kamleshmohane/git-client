@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Client } from '../../models/Client';
 import { FlashMessagesService } from 'angular2-flash-messages/module';
 import { ClientService } from '../../services/client.service';
@@ -10,7 +10,7 @@ import {detachEmbeddedView} from "@angular/core/src/view";
   templateUrl: './add-client.component.html',
   styleUrls: ['add-client.component.scss']
 })
-export class AddClientComponent implements OnInit {
+export class AddClientComponent implements OnInit , OnDestroy{
 client:Client ={
   firstName : '',
   lastName : '',
@@ -28,6 +28,11 @@ disableBalanceOnAdd:boolean = false;
 
   ngOnInit() {
   }
+
+  ngOnDestroy(){
+   this.flashMessagesService;
+  }
+
   onSubmit({value , valid}:{value:Client , valid:boolean}){
     if(this.disableBalanceOnAdd)
     {
@@ -39,7 +44,7 @@ disableBalanceOnAdd:boolean = false;
     }
     else {
         this.clientService.newClient(value);
-      this.flashMessagesService.show('New Client added Successfully', {cssClass:'flash-success',timeout:4000});
+      // this.flashMessagesService.show('New Client added Successfully', {cssClass:'flash-success',timeout:4000});
       this.router.navigate(['/']);
     }
   }
