@@ -21,11 +21,13 @@ import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
 import {SettingsComponent} from './components/settings/settings.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 //service import
 import {ClientService} from './services/client.service';
 import {NgxSpinnerModule} from "ngx-spinner";
-import {FlashMessagesModule} from "angular2-flash-messages/module";
+
 
 const appRoutes: Routes = [
   {
@@ -43,6 +45,10 @@ const appRoutes: Routes = [
   {
     path: 'add-client',
     component: AddClientComponent
+  },
+  {
+    path: 'client/:id',
+    component: ClientDetailsComponent
   }
 ];
 
@@ -72,10 +78,11 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [
     AngularFireAuth,

@@ -1,3 +1,22 @@
-<p>
-  client-details works!
-</p>
+<div class="container">
+  <div class="back-dash">
+    <a routerLink="/" href="#"><i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard</a>
+  </div>
+  <div class="btn-group">
+    <a [routerLink]="['/edit-client/'+id]"><i class="fa fa-pencil"></i> Edit</a>
+    <button type="button"><i class="fa fa-trash"></i> Delete</button>
+  </div>
+  <hr>
+  <div *ngIf="client" class="card-head">
+    <h3>{{client.firstName | uppercase }} {{client.lastName | uppercase}}</h3>
+  </div>
+  <div class="key-id">
+    <h4>Client ID: {{id}}</h4>
+    <div class="contact">
+      <ul *ngIf="client">
+        <li>Contact Phone: {{client.phone }}</li>
+        <li>contact Email: {{client.email}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

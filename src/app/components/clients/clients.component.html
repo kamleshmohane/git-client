@@ -4,7 +4,7 @@
     <h2><i class="fa fa-users"></i>Clients</h2>
   </div>
   <div class="total">
-    <label>Total owed: {{totalOwed | currency:"USD":true}}</label>
+    <label>Total owed: {{totalOwed | currency:"USD":"symbol"}}</label>
   </div>
   <table *ngIf="clients?.length" class="table-content">
     <thead class="thead-inverse">
@@ -20,9 +20,9 @@
       <td>{{client?.keyData?.key}}</td>
       <td>{{client?.firstName}} {{client.lastName}}</td>
       <td>{{client?.email}}</td>
-      <td>{{client?.balance | currency:"USD":true}}</td>
+      <td>{{client?.balance | currency:"USD":"symbol"}}</td>
       <td>
-        <a [routerLink]="['/']">
+        <a [routerLink]="['/client/'+client?.keyData?.key]">
           <button><i class="fa fa-arrow-circle-o-right"></i> Details</button>
         </a>
       </td>
