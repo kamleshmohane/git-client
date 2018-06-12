@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "angularfire2/auth";
 import { map } from 'rxjs/operators';
+import reject = Q.reject;
 // import 'rxjs/add/operator/map';
 
 @Injectable({
@@ -27,5 +28,14 @@ export class AuthService {
   // logout user
   logout(){
     this.afAuth.auth.signOut();
+  }
+
+  //register user
+  register(email:string ,password:string){
+    return new Promise((resolve,reject)=>{
+      this.afAuth.auth.createUserWithEmailAndPassword(email,password)
+        .then(userData => resolve(userData),
+        err => reject(err));
+    });
   }
 }
