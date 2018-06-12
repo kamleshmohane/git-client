@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { ToastrService } from 'ngx-toastr';
 import { Client } from '../../models/Client';
-import { Router, ActivatedRoute, Params} from '@angular/router';;
+import { Router, ActivatedRoute, Params} from '@angular/router';
+import {any} from "codelyzer/util/function";
+;
 
 @Component({
   selector: 'app-client-details',
@@ -13,7 +15,7 @@ export class ClientDetailsComponent implements OnInit, Client {
   $key:string;
   id : string;
   hasBalance : boolean = false;
-  isBalanceUpdated : boolean =false;
+  showBalanceUpdated : boolean =false;
   client : any;
 
   constructor(
@@ -25,18 +27,25 @@ export class ClientDetailsComponent implements OnInit, Client {
 
   ngOnInit() {
     this.id = this.routes.snapshot.params['id'];
-    console.log(this.id);
     this.clientService.getClient(this.id).valueChanges().subscribe(client =>{
       this.client = client;
-      if(client.balance > 0){
+      if(client.balance > 0 ){
         this.hasBalance = true;
       }
     });
-
-    // this.clientService.getClient(this.id).snapshotChanges().subscribe(clients_1=>{
-    //   this.clients_1=clients_1;
-    //   console.log(this.clients_1);
-    // });
   }
 
+  updateBalance(id:any){
+    this.clientService.updateClient(this.id , this.client);
+    this.toastrService.success("Balance Updated");
+    this.router.navigate(['/client/'+this.id]);
+  }
+
+  onClickDelete(){
+    if(confirm("Are you sure you want to delete?")){
+      this.clientService.clientDeleted(this.id);
+      this.toastrService.info("Client Deleted");
+      this.router.navigate(['/']);
+    }
+  }
 }

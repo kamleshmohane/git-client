@@ -4,7 +4,7 @@
   </div>
   <div class="btn-group">
     <a [routerLink]="['/edit-client/'+id]"><i class="fa fa-pencil"></i> Edit</a>
-    <button type="button"><i class="fa fa-trash"></i> Delete</button>
+    <button type="button" (click)="onClickDelete()"><i class="fa fa-trash"></i> Delete</button>
   </div>
   <hr>
   <div *ngIf="client" class="card-head">
@@ -12,6 +12,21 @@
   </div>
   <div class="key-id">
     <h4>Client ID: {{id}}</h4>
+    <h3 *ngIf="client" class="bal">Balance:
+      <span [class.red]="hasBalance"
+            [class.green]="!hasBalance"
+      >{{client.balance | currency:"USD":"symbol"}} </span>
+      <small>
+        <a (click)="showBalanceUpdated = !showBalanceUpdated"><i class="fa fa-pencil"></i></a>
+      </small>
+    </h3>
+    <div class="update-balance">
+      <form *ngIf="showBalanceUpdated" (submit)="updateBalance(id)">
+        <input type="text" [(ngModel)]="client.balance" name="balance">
+        <button type="submit">Balance</button>
+      </form>
+    </div>
+    <!--<hr>-->
     <div class="contact">
       <ul *ngIf="client">
         <li>Contact Phone: {{client.phone }}</li>

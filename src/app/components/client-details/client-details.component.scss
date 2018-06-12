@@ -57,16 +57,41 @@
       padding: 0 20px;
 
     }
+    .bal {
+      position: absolute;
+      top: 155px;
+      right: 230px;
+    }
+    .update-balance {
+      float: right;
+      box-sizing: border-box;
+      padding: 5px 30px;
+      margin: 0;
+      button {
+        color: white;
+        background-color: #658bff;
+        border: 2px solid #658bff;
+        outline-style: none;
+      }
+    }
     .contact {
       margin-right: 30px;
       ul {
         list-style-type: none;
         li {
+          width: 70%;
           box-sizing: border-box;
           padding: 5px 20px;
           border: 1px solid #CCCCCC;
         }
       }
     }
+  }
+  .red {
+    color: red;
+  }
+
+  .green {
+    color: green;
   }
 }
