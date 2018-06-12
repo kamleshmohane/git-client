@@ -1,0 +1,59 @@
+.containerForm {
+  margin: 0;
+  padding: 60px 200px 0 200px;
+  .backLink {
+    width: 100%;
+  }
+  .form-content {
+    width: 100%;
+    .form-head {
+      color: white;
+      h4 {
+        background: black;
+        padding: 5px 20px;
+      }
+    }
+    .form-group {
+      box-sizing: border-box;
+      padding: 0 20px 0 20px;
+      label {
+      }
+      input {
+        width: 100%;
+        padding: 8px 10px;
+        margin: 4px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .danger-alert {
+        background-color: #f6aa9f;
+        padding: 5px 10px;
+        margin: 0;
+        border-radius: 4px;
+
+      }
+    }
+    .submit-form {
+      box-sizing: border-box;
+      padding: 0 20px 0 20px;
+      input {
+        width: 20%;
+        padding: 10px 10px;
+        text-align: center;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: white;
+        outline: none;
+        background-color: #658bff;
+        &:hover {
+          background-color: blue;
+        }
+      }
+    }
+  }
+}

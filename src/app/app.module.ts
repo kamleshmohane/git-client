@@ -49,6 +49,10 @@ const appRoutes: Routes = [
   {
     path: 'client/:id',
     component: ClientDetailsComponent
+  },
+  {
+    path: 'edit-client/:id',
+    component: EditClientComponent
   }
 ];
 

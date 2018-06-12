@@ -3,8 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { ToastrService } from 'ngx-toastr';
 import { Client } from '../../models/Client';
 import { Router, ActivatedRoute, Params} from '@angular/router';
-import {any} from "codelyzer/util/function";
-;
+
 
 @Component({
   selector: 'app-client-details',
