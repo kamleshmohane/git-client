@@ -1,0 +1,46 @@
+.container {
+  padding: 100px 450px 0 450px;
+  margin: 0;
+  .containerForm {
+    h2 {
+      padding: 5px 20px;
+      background-color: #030303;
+      color: white;
+    }
+    .form-group {
+      padding: 5px;
+      label {
+        font: bold 15px 'KacstFarsi';
+      }
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 5px 20px;
+        margin: 8px 0;
+      }
+    }
+    .btn-group {
+      padding: 5px;
+      input[type=submit] {
+        width: 49%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        margin: 0 5px 0 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type=reset] {
+        width: 49%;
+        background-color: #BD362F;
+        color: white;
+        padding: 10px 20px;
+        margin: 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}

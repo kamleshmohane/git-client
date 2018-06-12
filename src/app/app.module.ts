@@ -27,7 +27,7 @@ import { ToastrModule } from 'ngx-toastr';
 //service import
 import {ClientService} from './services/client.service';
 import {NgxSpinnerModule} from "ngx-spinner";
-
+import {AuthService} from "./services/auth.service";
 
 const appRoutes: Routes = [
   {
@@ -91,7 +91,8 @@ export const firebaseConfig = {
   providers: [
     AngularFireAuth,
     AngularFireDatabase,
-    ClientService
+    ClientService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
