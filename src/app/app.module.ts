@@ -28,11 +28,13 @@ import { ToastrModule } from 'ngx-toastr';
 import {ClientService} from './services/client.service';
 import {NgxSpinnerModule} from "ngx-spinner";
 import {AuthService} from "./services/auth.service";
+import {AuthGuard} from "./guards/auth.guard";
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'register',
@@ -44,15 +46,18 @@ const appRoutes: Routes = [
   },
   {
     path: 'add-client',
-    component: AddClientComponent
+    component: AddClientComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'client/:id',
-    component: ClientDetailsComponent
+    component: ClientDetailsComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'edit-client/:id',
-    component: EditClientComponent
+    component: EditClientComponent,
+    canActivate:[AuthGuard]
   }
 ];
 
@@ -92,7 +97,8 @@ export const firebaseConfig = {
     AngularFireAuth,
     AngularFireDatabase,
     ClientService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

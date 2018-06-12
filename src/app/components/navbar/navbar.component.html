@@ -5,16 +5,19 @@
         ClientPanel
       </label>
       <ul class="nav-ulleft">
-        <li class="nav-items">
+        <li *ngIf="isLoggedIn" class="nav-items">
           <a class="nav-link" routerLink="/">DashBoard</a>
         </li>
       </ul>
       <ul class="nav-ulright">
-        <li class="nav-items">
+        <li *ngIf="!isLoggedIn" class="nav-items">
           <a class="nav-link" routerLink="/register">Register</a>
         </li>
-        <li class="nav-items">
+        <li *ngIf="!isLoggedIn" class="nav-items">
           <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-items">
+          <a class="nav-link" (click)="onLogoutClick()">Logout</a>
         </li>
       </ul>
     </div>
